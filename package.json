@@ -10,6 +10,9 @@
   },
   "author": "Vinit Kumar",
   "license": "",
+   "devDependencies": {
+  "minimist": ">=0.2.1"
+},
   "dependencies": {
     "async": "^3.1.0",
     "aws-sdk": "^2.488.0",
@@ -38,6 +41,7 @@
     "passport-facebook": "^3.0.0",
     "passport-google-oauth": "^2.0.0",
     "passport-local": "^1.0.0",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.2.0",
+    "minimist": ">=0.2.1"
   }
 }
