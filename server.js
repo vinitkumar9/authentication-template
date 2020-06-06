@@ -1,4 +1,5 @@
 // IMPORTS
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const http = require('http');
@@ -9,7 +10,7 @@ const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const passport = require('passport');
 
-
+const KEY = process.env.KEY;
 const container = require('./container');
 var PORT = process.env.PORT;
 if(PORT == null || PORT == ""){
@@ -58,7 +59,7 @@ container.resolve(function(_, users, home){ // setting up the whole server insid
 
             // configuring the express to use sessionns for authentication
             app.use(session({
-                secret : 'thisisakey', // this is a sting and can take any value you like
+                secret : KEY, // this is a sting and can take any value you like
                 resave: false,
                 saveUninitialized: false,
                 store: new MongoStore({mongooseConnection: mongoose.connection}) // configuring the MongoStore to save data of sessions in mongodb
