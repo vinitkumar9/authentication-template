@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+// const passportMongoose = require('')
 const bycrypt = require('bcrypt-nodejs');
 
 const userSchema = mongoose.Schema({
@@ -16,5 +17,7 @@ userSchema.methods.encryptPassword = function(password){
 userSchema.methods.validUserPassword = function(password){
     return bycrypt.compareSync(password, this.password);
 };
+
+
 
 module.exports = mongoose.model('User', userSchema);
