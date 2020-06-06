@@ -7,10 +7,6 @@ module.exports = function(_, passport, validator){
             router.get('/', this.getingStarted);
             router.get('/signup', this.signupPage);
             router.get('/login', this.loginPage);
-            router.get('/auth/facebook', this.getFacebookLogin);
-            router.get('/auth/facebook/callback', this.facebookLogin);
-            router.get('/auth/google', this.getGoogleLogin);
-            router.get('/auth/google/callback', this.googleLogin);
 
             router.post('/login', [ // adding validaion for login 
                 validator.check('email').not().isEmpty().isEmail().withMessage('Email is invalid'), // validating the email just the format
